@@ -2,7 +2,7 @@
  * @Author: shangyun.si
  * @Date: 2020-07-06 12:48:55
  * @Last Modified by: shangyun.si
- * @Last Modified time: 2020-07-06 12:49:39
+ * @Last Modified time: 2020-07-06 13:14:54
  */
 
 'use strict';
@@ -28,10 +28,11 @@
 function errorHandler () {
   return async (ctx, next) => {
     // httpStatusCode 为 200【强制】并且是 API 前缀的 统一封装成 业务码形式
+    const pageType = global.allRoute[ctx.path] && global.allRoute[ctx.path]['type'];
     try {
       await next();
       if (
-        (ctx.status === 200)
+        (ctx.status === 200 && pageType !== 'p')
       ) {
         ctx.res.ok();
       }
