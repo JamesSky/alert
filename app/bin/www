@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+const Log = console;
+/**
+ * 封装start 方便做启动前环境的配置
+ */
+function start () {
+  const { app, onError, } = require('../');
+  const { port, host, env, } = require('../config');
+
+  const server = app.listen(port, host, () => {
+    Log.info({ event: 'execute', }, `API server listening on http://${host}:${port} , in ${env}`);
+  });
+
+  server.on('error', onError);
+}
+start();
