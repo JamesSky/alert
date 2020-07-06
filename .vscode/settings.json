@@ -1,0 +1,21 @@
+{
+    "eslint.enable": true,
+    "eslint.run": "onType",
+    "files.autoSave": "off",
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+    ],
+    "eslint.options": {
+        "configFile": "./.eslintrc.yml"
+    },
+    "editor.tabSize": 2,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "files.associations": {
+        "*.ttml": "xml",
+        "*.ttss": "css"
+    },
+}

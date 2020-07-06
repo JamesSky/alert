@@ -1,0 +1,10 @@
+apps:
+  - script : ./app/bin/www
+    name   : 'schedule-dingtalk'
+    instances: 1
+    exec_mode: cluster
+    min_uptime: '30s'
+    max_restarts: 20
+    pid_file: ./run.pid
+    error_file: './public/error.log'
+    out_file: './public/out.log'
